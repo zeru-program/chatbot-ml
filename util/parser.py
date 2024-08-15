@@ -26,8 +26,8 @@ class JSONParser:
         self.df = pd.DataFrame({'text_input': self.text,
                                 'intents': self.intents})
 
-        print(
-            f"[INFO] Data JSON converted to DataFrame with shape : {self.df.shape}")
+       # print(
+        #       f"[INFO] Data JSON converted to DataFrame with shape : {self.df.shape}")
 
     def get_dataframe(self):
         return self.df
