@@ -37,6 +37,43 @@
         ]
       },
       {
+        "tag": "kabar",
+        "patterns": [
+          "Kabar",
+          "kabar",
+          "apa kabar",
+          "apa kabar bang",
+          "apa kabar ka",
+          "kabar lu gimana",
+          "kbr",
+          "ap kabar",
+          ""
+        ],
+        "responses": [
+          "Baik, bagaimana dengan mu?",
+          "Baik bang, abang apa kabar?",
+          "Baik ka, kaka apa kabar?",
+          "Sehat dan baik, bagaimana dengan mu?"
+        ]
+      },
+      {
+        "tag": "respon-kabar",
+        "patterns": [
+          "Baik",
+          "Baik juga",
+          "baik",
+          "baik juga",
+          "aman",
+          "sehat",
+          ""
+        ],
+        "responses": [
+          "Mantap, mau bahas apa ni?",
+          "Keren, jangan sakit-sakitan yaa, jaga kesehatan muu",
+          "Baiklah, apa yang kita akan lakukan hari ini?"
+        ]
+      },
+      {
         "tag": "bye",
         "patterns": [
           "Dadah",

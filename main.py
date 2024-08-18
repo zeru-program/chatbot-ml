@@ -5,6 +5,7 @@ import numpy as np
 import os
 import json
 import random
+from datetime import datetime
 from fuzzywuzzy import process
 from sklearn.pipeline import make_pipeline
 from sklearn.feature_extraction.text import CountVectorizer
@@ -15,7 +16,11 @@ def clear():
     os.system('cls')
 
 def setup():
+    # dd/mm/YY H:M:S
+    now = datetime.now()
+    dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
     print(f"""\033[33m
+                                    {dt_string}
           ╔═╗┌─┐┌─┐┬ ┬┌─┐┌┬┐       ╔╦╗┌─┐┌─┐┬ ┬┬┌┐┌┌─┐  ╦  ┌─┐┌─┐┬─┐┌┐┌┬┌┐┌┌─┐
           ╔═╝├┤ │  ├─┤├─┤ │   ───  ║║║├─┤│  ├─┤││││├┤   ║  ├┤ ├─┤├┬┘││││││││ ┬
           ╚═╝└─┘└─┘┴ ┴┴ ┴ ┴        ╩ ╩┴ ┴└─┘┴ ┴┴┘└┘└─┘  ╩═╝└─┘┴ ┴┴└─┘└┘┴┘└┘└─┘\033[36m
