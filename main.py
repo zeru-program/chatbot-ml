@@ -3,6 +3,8 @@ import string
 import pickle
 import numpy as np
 import os
+import json
+import random
 from fuzzywuzzy import process
 from sklearn.pipeline import make_pipeline
 from sklearn.feature_extraction.text import CountVectorizer
@@ -28,7 +30,6 @@ def preprocess(chat):
     chat = ''.join(ch for ch in chat if ch not in tandabaca)
     return chat
 
-
 def fuzzy_match(user_input, patterns, threshold=80):
     match, score = process.extractOne(user_input, patterns)
     return match if score >= threshold else None
@@ -45,10 +46,11 @@ def bot_response(chat, pipeline, jp):
         # Optional: Fuzzy matching to enhance understanding
         patterns = jp.df.query(f'intents == "{pred_tag}"')['text_input'].tolist()
         matched_pattern = fuzzy_match(chat, patterns)
+        chatBad = ["Maaf saya masih tahap pengembangan, belum mengerti apa yang anda inginkan", "Maaf saya tidak mengerti.", "Saya tidak mengerti apa yang anda bicarakan :(", "Yahh saya tidak mengerti, coba bahas topik lain bangg", "Sorry bang saya tidak  mengerti apa yang anda maksud. bisa jelaskan lebih lanjut topik mu?", "Maaf data saya masih terbatas sehingga belum mengerti apa yang anda maksud, kirimkan topik yang ingin kamu bahas ke akun ig @zerr.ace yuk"]
         if matched_pattern:
             return jp.get_response(pred_tag), pred_tag
         else:
-            return "Maaf, saya tidak bisa memahami pertanyaan Anda dengan baik.", pred_tag
+          return random.choice(chatBad), pred_tag
 
 clear()
 setup()
@@ -75,12 +77,47 @@ pipeline.fit(df.text_input_prep, df.intents)
 with open("model_chatbot.pkl", "wb") as model_file:
     pickle.dump(pipeline, model_file)
 
-# interaction with bot
-# print("[INFO] Anda Sudah Terhubung dengan Bot Kami")
+# interaktif dengan bot
 while True:
-    chat = input("Anda >> ")
+    chat = input(" Anda \033[0m    \033[93m>>\033[0m ")
+    if chat == "q":
+        print(f"""
+
+ ------------------------- Anda telah keluar -------------------------
+              """)
+        empety = []
+        with open("data/chat-user.json", 'w') as file:
+          json.dump(empety, file)
+        exit()
+    if chat == "d":
+        with open('data/chat-user.json', 'r') as file:
+         loaded_data = json.load(file)
+         for x in loaded_data:
+             print(x)
+    if chat == "":
+       print(f" \033[46m \033[30mZeChat \033[0m \033[93m>>\033[0m Mohon ketik pesan dengan benar !")
+    # Nama file JSON
+    filename = 'data/chat-user.json'
+    # Membaca data yang ada jika file sudah ada
+    if os.path.exists(filename):
+        with open(filename, 'r') as file:
+            try:
+                data = json.load(file)
+            except json.JSONDecodeError:
+                # Jika file kosong atau tidak valid, mulai dengan list kosong
+                data = []
+    else:
+        # Jika file belum ada, mulai dengan list kosong
+        data = []
+
+    # Menambahkan data baru ke list data
+    data.append(chat)
+    # Menyimpan data ke file JSON
+    with open(filename, 'w') as file:
+        json.dump(data, file, indent=4)
     res, tag = bot_response(chat, pipeline, jp)
-    print(f"ZeBot >> {res}")
+    print(f" \033[46m \033[30mZeChat \033[0m \033[93m>>\033[0m {res}")
     if tag == 'bye':
         break
+
 

@@ -1,35 +1,142 @@
-{"intents": [
-    {"tag": "salam",
-     "patterns": ["Hai", "Hi", "Halo", "Selamat Pagi", "Selamat Siang", "Selamat Malam", "Salam", "Ping", "P"],
-     "responses": ["Halo cuyyy!", "Hai", "Halo, ada yang bisa saya bantu?", "Halo selamat datang", "Hai Kawan", "Yooo ada apa bangg?"]
-    },
-    {"tag": "kabar",
-     "patterns": ["Apa kabar?", "Kabar gimana bang", "Kabar"],
-     "responses": ["Baik bangg", "Aman", "Sakit dikit bang, sakit hati", "Baik bang, abang gimana?"]
-    },
-    {"tag": "bye",
-     "patterns": ["Dadah", "Selamat Tinggal", "Dah", "Daah", "Semoga harimu menyenangkan", "Ok makasih", "Sampai Jumpa Lagi", "Ok bye"],
-     "responses": ["Sampai jumpa lagi yaa", "Kalau ada masalah, hubungi aku lagi ya", "Semoga harimu menyenangkan!"]
-    },
-    {"tag": "nama",
-     "patterns": ["nama kamu siapa?", "lu siapa?", "siapa sih lo?", "lu sape ?", "nama lo sape dah ?", "nama?"],
-     "responses": ["Namaku zeru bang, salam kenal kak!", "Halo, aku zeru!", "Kenalin, aku zeru!"]
-    },
-    {"tag": "pekerjaan",
-     "patterns": ["lu ngapain?", "pekerjaan kamu apa?", "lu kerja apa?", "tugas kamu apa?", "tugas lo ngapain?"],
-     "responses": ["Aku bot nya ka zeruu :>", "Tugasku jadi asisten zeru"]
-    },
-    {"tag": "toksik",
-        "patterns": ["kontol", "anjing", "bangsat"],
-        "responses": ["Waduh gaboleh toksik dong kak", "Parah luu"]
-    },
-    {"tag": "ngodingpython",
-    "patterns": ["emang python itu apa si?", "apa tuh ngodingpython?", "emang ngoding python apa sih?", "wah apa tuh ngoding python?", "ngodingpython emang apa?"],
-    "responses": ["Ngoding python adalah membuat suatu program menggunakan bahasa pyhton kak"]
-    },
-    {"tag": "ngodingpython_typo",
-    "patterns": ["emang ngodingphython apa ?", "apaan si ngodingpiton?", "emang ngoding phyton apa sih?", "wah apa tuh ngoding piton?", "ngodingpithon emang apa?", "ngodingpiyon itu apa sih"],
-    "responses": ["NgodingPython kaak, jangan bikin emosi deh", "Typo kak, NgodingPython kali maksudnya"]
-    }
-]
-}
+{
+    "intents": [
+      {
+        "tag": "salam",
+        "patterns": [
+          "Hai",
+          "Hi",
+          "Halo",
+          "Selamat Pagi",
+          "Selamat Siang",
+          "Selamat Malam",
+          "Salam",
+          "Ping",
+          "P",
+          "bang",
+          "bg",
+          "Kakak",
+          "Kaka",
+          "Woi",
+          "sore ka",
+          "pagi ka",
+          "siang ka",
+          "pagi",
+          "siang",
+          "sore",
+          "malam",
+          ""
+        ],
+        "responses": [
+          "Halo kaka!",
+          "Halo bang!",
+          "Hai",
+          "Halo, ada yang bisa saya bantu?",
+          "Halo selamat datang",
+          "Hai Kawan",
+          "Yooo ada apa bangg?"
+        ]
+      },
+      {
+        "tag": "bye",
+        "patterns": [
+          "Dadah",
+          "Selamat Tinggal",
+          "Dah",
+          "Daah",
+          "Semoga harimu menyenangkan",
+          "Ok makasih",
+          "Sampai Jumpa Lagi",
+          "Ok bye"
+        ],
+        "responses": [
+          "Sampai jumpa lagi yaa",
+          "Kalau ada masalah, hubungi aku lagi ya",
+          "Semoga harimu menyenangkan!"
+        ]
+      },
+      {
+        "tag": "iya",
+        "patterns": [
+          "iya",
+          "oke",
+          "ok",
+          "sip",
+          "ya",
+          "siap",
+          "mantap"
+        ],
+        "responses": [
+          "sipp",
+          "mantapsss",
+          "okee, apa yang bisa aku bantu ?",
+          "mantap, mau ngapain nih",
+          "gokss",
+          "oke dehh"
+        ]
+      },
+      {
+        "tag": "nama",
+        "patterns": [
+          "nama kamu siapa?",
+          "lu siapa?",
+          "siapa sih lo?",
+          "lu sape ?",
+          "nama lo sape dah ?",
+          "nama?"
+        ],
+        "responses": [
+          "Namaku zeru bang, salam kenal kak!",
+          "Halo, aku zeru!",
+          "Gua zeru, salken yaa",
+          "Aku zeru kak, kamu siapa?",
+          "Kenalin, aku zeru!"
+        ]
+      },
+      {
+        "tag": "pekerjaan",
+        "patterns": [
+          "lu ngapain?",
+          "pekerjaan kamu apa?",
+          "lu kerja apa?",
+          "tugas kamu apa?",
+          "tugas lo ngapain?"
+        ],
+        "responses": [
+          "Aku seorang Fullstack Web Developer.",
+          "Aku bekerja sebagai Fullstack Web Developer. Kalau butuh bantuan coding, bisa tanya aku!",
+          "Tugas utamaku adalah mengembangkan aplikasi web dari frontend sampai backend."
+        ]
+      },
+      {
+        "tag": "hobby",
+        "patterns": [
+          "Apa hobi kamu?",
+          "Lu suka ngapain di waktu luang?",
+          "Kamu punya hobi apa?",
+          "Apa yang kamu suka lakukan?",
+          "Hobi lo apa?"
+        ],
+        "responses": [
+          "Aku suka coding dan belajar teknologi baru.",
+          "Selain coding, aku juga suka membaca buku dan bermain game.",
+          "Waktu luangku sering kuhabiskan dengan mengeksplorasi teknologi dan hobi kreatif."
+        ]
+      },
+      {
+        "tag": "lokasi",
+        "patterns": [
+          "Kamu tinggal dimana?",
+          "Dimana alamat kamu?",
+          "Kamu tinggal di kota apa?",
+          "Kamu dari mana?",
+          "Asal kamu dari mana?"
+        ],
+        "responses": [
+          "Saat ini, aku bekerja secara remote, jadi aku bisa berada di mana saja.",
+          "Aku bekerja dari berbagai tempat, karena pekerjaan fullstack bisa dilakukan secara remote.",
+          "Aku tidak terikat oleh lokasi tertentu, aku bisa bekerja dari mana saja."
+        ]
+      }
+    ]
+  }
+  
